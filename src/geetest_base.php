@@ -109,7 +109,7 @@ class geetest_base
     }
     /**
      * 响应数据
-     * return json
+     * return mixed
      */
     public function first_Response(array $data){
         return response()->json($data);
