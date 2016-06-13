@@ -28,7 +28,7 @@ class geetest_base
      *
      * 初始化包含第一次和第二次认证
      * @param null $user_id
-     * @return first:json or second:project
+     * @return first:json or second:object
      */
     public function init(Request $request,Closure $Success_action = null,Closure $Fail_action = null)
     {
@@ -74,7 +74,7 @@ class geetest_base
      * 判断极验服务器是否down
      *
      *
-     * @return project
+     * @return object
      */
     public function checkIfDwon(Closure $check_results_action)
     {
@@ -109,6 +109,7 @@ class geetest_base
     }
     /**
      * 响应数据
+     * return json
      */
     public function first_Response(array $data){
         return response()->json($data);
