@@ -9,6 +9,11 @@
 ***
 #调用
 ```php
+ use geetest\Facades\geetest;
+
+```
+
+```php
 geetest::init($request,function(){Auth::attempt([....])},function(){....});
 ```
 必须注册路由方法为any
