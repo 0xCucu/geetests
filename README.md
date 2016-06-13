@@ -5,6 +5,7 @@
 1. `composer require laraveler/geetest`
 2. 在config/app.php providers数组里加入`geetest\provider\geetestServiceProvider::class`
 3. 执行 `php artisan vendor:publish`
+
 ***
 #调用
 ```php
