@@ -1,0 +1,17 @@
+{
+
+    "name": "laravel/geetest",
+    "description": "geetest for laravel ",
+    "keywords": ["laravel", "geetest"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "laravel/geetest":"1.0"
+    },
+     "autoload": {
+       "psr-4":{
+         "geetest\\":"src/"
+       }
+     }
+
+}
