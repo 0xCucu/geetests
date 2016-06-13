@@ -27,7 +27,9 @@ class Data_Request
 
             if (curl_errno($curl)) {
                 $err = sprintf("curl[%s] error[%s]", $url, curl_errno($curl) . ':' . curl_error($curl));
-                trigger_error($err);
+                 if(env('APP_DEBUG')){
+                    trigger_error($err);
+                }
             }
 
             curl_close($curl);
@@ -68,7 +70,9 @@ class Data_Request
 
             if (curl_errno($curl)) {
                 $err = sprintf("curl[%s] error[%s]", $url, curl_errno($curl) . ':' . curl_error($curl));
-                trigger_error($err);
+                if(env('APP_DEBUG')){
+                    trigger_error($err);
+                }
             }
 
             curl_close($curl);
