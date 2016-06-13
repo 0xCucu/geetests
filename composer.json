@@ -2,6 +2,12 @@
 
     "name": "laraveler/geetest",
     "description": "geetest for laravel ",
+    "authors": [
+    {
+      "name": "jj",
+      "homepage": ""
+    }
+  ],
     "keywords": ["laravel", "geetest"],
     "license": "MIT",
     "type": "project",
