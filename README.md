@@ -2,9 +2,9 @@
 官方给出的sdk调用方法过于复杂浪费开发时间，我就封装了一个调用非常简单的一个geetest包可以减少开发人员不少时间
 ***
 #安装
-1.`composer require laraveler/geetest`
-2.在config/app.php providers数组里加入`geetest\provider\geetestServiceProvider::class`
-3.执行 `php artisan vendor:publish`
+1. `composer require laraveler/geetest`
+2. 在config/app.php providers数组里加入`geetest\provider\geetestServiceProvider::class`
+3. 执行 `php artisan vendor:publish`
 ***
 #调用
 ```php
