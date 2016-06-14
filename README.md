@@ -12,14 +12,8 @@
  use geetest\Facades\geetest;
 
 ```
-异步验证:
 ```php
 return geetest::init($request,function(){Auth::attempt([....])},function(){....});
-```
->同步验证时此方法仅用来初始化
-
-```php
-return geetest::init($request);
 ```
 必须注册路由方法为any
 >初始化时需要注入$request对象，第二个参数为验证成功后需要做的动作,第三个参数为验证失败需要的动作
