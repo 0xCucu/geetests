@@ -12,7 +12,7 @@
  use geetest\Facades\geetest;
 
 ```
-
+针对弹出式,异步二次验证:
 ```php
 return geetest::init($request,function(){Auth::attempt([....])},function(){....});
 ```
