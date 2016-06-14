@@ -41,12 +41,10 @@ class decode
                 $key[$item] = $value;
             }
         }
-
         for ($j = 0; $j < strlen($string); $j++) {
             $res += $key[$array_value[$j]];
         }
         $res = $res - $this->decodeRandBase($challenge);
-
         return $res;
     }
 

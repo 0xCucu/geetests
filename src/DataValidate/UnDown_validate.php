@@ -23,33 +23,35 @@ class UnDown_validate implements  Validate
             "seccode" => $seccode,
             "sdk"     => $GT_SDK_VERSION,
         );
-        $user_id = Config::get('geetest.user_id') ;
-        if ((!$user_id = null) and (is_string($user_id))) {
-            $data["user_id"] = $user_id;
-        }
+
+//        if ((!$user_id = null) and (is_string($user_id))) {
+//            $data["user_id"] = $user_id;
+//        }
         $url          = "http://api.geetest.com/validate.php";
         $data_request = App::make('data_request');
 
         $codevalidate = $data_request->post_request($url, $data);
         if ($codevalidate == md5($seccode)) {
-            return 1;
+            return true;
         } else {
             if ($codevalidate == "false") {
-                return 0;
+                return false;
             } else {
-                return 0;
+                return false;
             }
         }
 
     }
     public function checkValidate($challenge, $validate)
     {
-        if (strlen($validate) != 32 && md5( Config::get('geetest.KEY') . 'geetest' . $challenge) != $validate) {
-            return false;
-        }
+      if (strlen($validate) != 32) {
+          return false;
+      }
+      if (md5(Config::get('geetest.KEY') . 'geetest' . $challenge) != $validate) {
+          return false;
+      }
 
-
-        return true;
+      return true;
     }
 
 

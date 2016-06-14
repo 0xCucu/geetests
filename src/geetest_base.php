@@ -37,10 +37,8 @@ class geetest_base
         $this->KEY = Config::get('geetest.KEY');
         //判断是否是第一次验证
         if ( $request->isMethod('get') ){
-
             return $this->checkIfDwon(
                 function($getResults)use ($Success_action,$Fail_action){
-
                     $check_results = $this->check_results;
                     $Provider=__NAMESPACE__.'\\Results\\'.$check_results."Provider";
                     $check_results_provider = new $Provider ();
@@ -53,7 +51,6 @@ class geetest_base
                     }
                 }
             );
-
         }elseif ($request->isMethod('post')){
             //判断是否验证成功
             if( Session::get('status') ){
@@ -88,9 +85,7 @@ class geetest_base
             $this->check_results =  preg_replace('/\s/',' ',Config::get('geetest.Success_callback'));
             Session::put('status',true);
         }
-
         return $check_results_action($getResults);
-
     }
     public function parseApiUrl()
     {
@@ -101,11 +96,9 @@ class geetest_base
         $this->api_url=$api_url;
         foreach ($va[1] as $value)
         {
-
             $this->api_url = preg_replace('/{'.$value.'}/',Config::get('geetest.'.$value),$this->api_url);
         }
         return $this->api_url ;
-
     }
     /**
      * 响应数据
@@ -113,8 +106,6 @@ class geetest_base
      */
     public function first_Response(array $data){
         return response()->json($data);
-
-
     }
 
 
