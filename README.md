@@ -17,6 +17,7 @@
 return geetest::init($request,function(){Auth::attempt([....])},function(){....});
 ```
 >同步验证时此方法仅用来初始化
+
 ```php
 return geetest::init($request);
 ```
